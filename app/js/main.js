@@ -1,23 +1,21 @@
-"use strict";
-
-let number = 5;
-const leftBorderWidth = 1;
-
-number = 10;
-console.log(number);
-
-const obj = {
-    a: 50
-};
-
-obj.a = 10;
-
-console.log(obj);
+const vehicleBodyWidth = 5000,
+      vehicleBodyLenght = 4000;
 
 
-console.log(name);
-var name ='Ivan';
 
-{
-    let result = 50;
-}
+
+console.log("Ширина кузова автомобился: " + vehicleBodyWidth + ', длина: ' + vehicleBodyLenght);
+
+// ['vruru', 'fgfgfgf', 'fdfdfd'].map(a => )
+
+//Request
+// data
+// response
+
+
+//snake_case
+//UPPER_SNAKE_CASE
+//Kebab-case
+//PascalCase
+
+const COLOR_RED = '#F00';
