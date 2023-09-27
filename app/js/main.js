@@ -1,21 +1,27 @@
-const vehicleBodyWidth = 5000,
-      vehicleBodyLenght = 4000;
+'use sctrict';
 
+let number = 4.6;
 
+console.log(4/0);
+console.log('string' * 9);
 
+const  person = "5";
 
-console.log("Ширина кузова автомобился: " + vehicleBodyWidth + ', длина: ' + vehicleBodyLenght);
+const bool = false;
 
-// ['vruru', 'fgfgfgf', 'fdfdfd'].map(a => )
+// console.log(something);
 
-//Request
-// data
-// response
+let und;
+console.log(und);
 
+const obj = {
+    name: "John",
+    age: 25,
+    isMarried: false
+};
 
-//snake_case
-//UPPER_SNAKE_CASE
-//Kebab-case
-//PascalCase
+// console.log(obj.name);
+console.log(obj["name"]);
 
-const COLOR_RED = '#F00';
+let arr = ['plum.jpg', 6, 'orange.png', 'apple.bmp', {}, []];
+console.log(arr[0])
