@@ -1,27 +1,33 @@
 'use sctrict';
 
-let number = 4.6;
+const arr = ['a', 'b', 'c'];
 
-console.log(4/0);
-console.log('string' * 9);
+arr[10] = '3456';
 
-const  person = "5";
+console.log(arr[10]);
 
-const bool = false;
+const arr0bj = {
+    a: 'a',
+    1: 'b',
+    2: 'c',
+    abc: {
+        df: [{}, {}],
+        def: {
 
-// console.log(something);
+        }
+    }
+};
+const b = 'b';
 
-let und;
-console.log(und);
+// arr0bj.b = '1234';
+arr0bj[b] = '1234';
+
+console.log(arr0bj['b']);
+console.log(arr0bj.b);
+
+// const obj = {a: 1, b:2};
 
 const obj = {
-    name: "John",
-    age: 25,
-    isMarried: false
+    Anna: 500,
+    'Alice': 800,
 };
-
-// console.log(obj.name);
-console.log(obj["name"]);
-
-let arr = ['plum.jpg', 6, 'orange.png', 'apple.bmp', {}, []];
-console.log(arr[0])
