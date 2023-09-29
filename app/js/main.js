@@ -1,33 +1,18 @@
 'use sctrict';
 
-const arr = ['a', 'b', 'c'];
+// alert('Hello');
 
-arr[10] = '3456';
+// const result = confirm('Are you here?');
+// console.log(result);
 
-console.log(arr[10]);
+// const answer = +prompt('Вам есть 18?', '');
+// console.log(answer +5);
 
-const arr0bj = {
-    a: 'a',
-    1: 'b',
-    2: 'c',
-    abc: {
-        df: [{}, {}],
-        def: {
+const answers = [];
 
-        }
-    }
-};
-const b = 'b';
+answers[0] = prompt('Как ваше имя?', '');
+answers[1] = prompt('Как ваше Фамилия?', '');
+answers[2] = prompt('Сколько вам лет?', '');
 
-// arr0bj.b = '1234';
-arr0bj[b] = '1234';
-
-console.log(arr0bj['b']);
-console.log(arr0bj.b);
-
-// const obj = {a: 1, b:2};
-
-const obj = {
-    Anna: 500,
-    'Alice': 800,
-};
+console.log(typeof(answers));
+// document.write(answers);
