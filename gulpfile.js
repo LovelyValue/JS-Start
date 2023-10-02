@@ -12,6 +12,10 @@ const clean = require('gulp-clean');
 function scripts() {
   return src([
     'app/js/*.js',
+    '!app/js/main.min.js',
+  ])
+    .pipe(concat('main.min.js'))
+    .pipe(uglify())
     .pipe(dest('app/js'))
     .pipe(browserSync.stream());
 }
