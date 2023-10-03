@@ -1,25 +1,19 @@
-// eslint-disable-next-line no-useless-concat
-console.log('arr' + ' - object');
-console.log(`${4}5`);
+const numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
 
-let incr = 10;
-let decr = 10;
+const personalMovieDB = {
+  count: numberOfFilms,
+  movies: {},
+  actors: {},
+  genres: [],
+  privat: false,
+};
 
-incr++; // Постфикс
---decr; // Префекс
+const a = prompt('Один из последних просмотренных фильмов?', '');
+const b = prompt('На сколько оцените его', '');
+const c = prompt('Один из последних просмотренных фильмов?', '');
+const d = prompt('На сколько оцените его?', '');
 
-console.log(incr);
-console.log(decr);
+personalMovieDB.movies[a] = b;
+personalMovieDB.movies[c] = d;
 
-console.log(5 % 2);
-
-console.log(2 + 2 * 2 !== 8);
-
-const isChecked = true;
-const isClose = true;
-
-console.log(isChecked && isClose);
-const isChecket = false;
-const isClost = false;
-
-console.log(isChecket || !isClost);
+console.log(personalMovieDB);
