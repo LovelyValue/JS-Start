@@ -1,25 +1,34 @@
-// eslint-disable-next-line no-useless-concat
-console.log('arr' + ' - object');
-console.log(`${4}5`);
+if (4 == 9) {
+	console.log('Ok!');
+} else {
+   console.log('Error')
+}
 
-let incr = 10;
-let decr = 10;
+const num = 50;
 
-incr++; // Постфикс
---decr; // Префекс
+if (num < 49) {
+   console.log('Error');
+} else if (num > 100) {
+   console.log('a lot of');   
+} else {
+   console.log('Ok!')
+}
 
-console.log(incr);
-console.log(decr);
+(num === 50) ? console.log('Ok!') : console.log('Error');
 
-console.log(5 % 2);
+const mun = 50;
 
-console.log(2 + 2 * 2 !== 8);
-
-const isChecked = true;
-const isClose = true;
-
-console.log(isChecked && isClose);
-const isChecket = false;
-const isClost = false;
-
-console.log(isChecket || !isClost);
+switch (mun) {
+   case 49:
+      console.log('Wrong');
+      break;
+   case 100:
+      console.log('Wrong');
+      break;
+   case 50:
+      console.log('Wrong');
+      break;
+   default:
+      console.log('Не в этот раз');
+      break
+};
