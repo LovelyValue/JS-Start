@@ -1,42 +1,24 @@
-// const hamburger = 5;
-// const fries = 0;
+let num = 50;
 
-// if (hamburger && fries) {
-// 	console.log('Я сыт!');
+// while (num <= 55) {
+// 	console.log(num);
+// 	num++;
 // }
 
-// const hamburger = 3;
-// const fries = 1;
-// const cola = 0;
+// do {
+// 	console.log(num);
+// 	num++
+// }
+// while (num < 55);
 
-// console.log(hamburger === 3 && cola && fries);
-
-// console.log(1 && 0);
-// console.log(1 && 5);
-// console.log(null && 5);
-// console.log(0 && 'uuu');
-
-// if (hamburger === 3 && cola === 1 && fries) {
-// 	console.log('Все сыты');
-// } else {
-// 	console.log('Мы уходим');
+// for (let i = 1; i < 8; i++) {
+// 	console.log(i);
 // }
 
-const hamburger = 3;
-const fries = 3;
-const cola = 0;
-const nuggets = 2;
-
-
-if (hamburger === 3 && (cola === 2 || fries === 3) && nuggets) {
-	console.log('Все довольны');
-} else {
-	console.log('Мы уходим');
+for (let i = 1; i < 8; i++) {
+	if (i === 6) {
+		// break;
+		continue;
+	}
+	console.log(i);
 }
-
-let john, alex, sam, mar = 'done';
-
-console.log(john || alex || sam || mar);
-
-console.log(!0);
-
