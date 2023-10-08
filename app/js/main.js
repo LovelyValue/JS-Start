@@ -1,34 +1,42 @@
-if (4 == 9) {
-	console.log('Ok!');
+// const hamburger = 5;
+// const fries = 0;
+
+// if (hamburger && fries) {
+// 	console.log('Я сыт!');
+// }
+
+// const hamburger = 3;
+// const fries = 1;
+// const cola = 0;
+
+// console.log(hamburger === 3 && cola && fries);
+
+// console.log(1 && 0);
+// console.log(1 && 5);
+// console.log(null && 5);
+// console.log(0 && 'uuu');
+
+// if (hamburger === 3 && cola === 1 && fries) {
+// 	console.log('Все сыты');
+// } else {
+// 	console.log('Мы уходим');
+// }
+
+const hamburger = 3;
+const fries = 3;
+const cola = 0;
+const nuggets = 2;
+
+
+if (hamburger === 3 && (cola === 2 || fries === 3) && nuggets) {
+	console.log('Все довольны');
 } else {
-   console.log('Error')
+	console.log('Мы уходим');
 }
 
-const num = 50;
+let john, alex, sam, mar = 'done';
 
-if (num < 49) {
-   console.log('Error');
-} else if (num > 100) {
-   console.log('a lot of');   
-} else {
-   console.log('Ok!')
-}
+console.log(john || alex || sam || mar);
 
-(num === 50) ? console.log('Ok!') : console.log('Error');
+console.log(!0);
 
-const mun = 50;
-
-switch (mun) {
-   case 49:
-      console.log('Wrong');
-      break;
-   case 100:
-      console.log('Wrong');
-      break;
-   case 50:
-      console.log('Wrong');
-      break;
-   default:
-      console.log('Не в этот раз');
-      break
-};
