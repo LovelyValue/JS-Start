@@ -1,31 +1,40 @@
-// for (let i = 0; i < 3; i++) {
-// 	console.log(i);
-// 	for (let j = 0; j < 3; j++) {
-// 		console.log(j);
-// 	}
-// }
+let num = 20;
 
-// let result = '';
-// const length = 7;
-
-// for (let i = 1; i < length; i++) {
-
-// 	for (let j = 0; j < i; j++) {
-// 		result += "*";
-// 	}
-
-// 	result += '\n';
-// }
-
-// console.log(result);
-
-first: for (let i = 0; i < 3; i++) {
-	console.log(`First level: ${i}`);
-	for (let j = 0; j < 3; j++) {
-		console.log(`Second level: ${j}`);
-		for (let k = 0; k < 3; k++) {
-			if (k === 2) continue first;
-			console.log(`Third level: ${k}`);
-		}
-	}
+function showFirstMessage(text) {
+	console.log(text);
+	let num = 10;
+	console.log(num);
 }
+
+showFirstMessage('Hello World');
+console.log(num);
+
+function calc(a, b) {
+	return (a + b);
+}
+
+ console.log(calc(4, 3));
+ console.log(calc(5, 6));
+ console.log(calc(10, 6));
+
+ function ret() {
+	let num = 50;
+
+	//
+
+	return num;
+ }
+
+ const anotherNum = ret();
+ console.log(anotherNum)
+
+ const logger = function() {
+	console.log('Hello');
+ };
+
+ logger();
+
+ const call = (a, b) => { 
+	console.log('1')
+	return a + b 
+};
