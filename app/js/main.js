@@ -1,27 +1,24 @@
-const usdCurr = 28;
-const discount = 0.9;
+const str = 'teSt';
 
-function convert (amount, curr) {
-	return curr * amount;
-}
+// console.log(str.toUpperCase());
+console.log(str.toLowerCase());
+console.log(str);
 
-function promotion(result) {
-	console.log(result * discount);
-}
+const fruit = 'Some fruit';
 
-const res = convert(500, usdCurr);
+console.log(fruit.indexOf('fruit'));
 
-promotion(res);
+const logg = 'hello world';
 
-function test() {
-	for (let i = 0; i < 5; i++) {
-		console.log(i);
-		if (i === 3) return
-	}
-	console.log('Done');
-}
+console.log(logg.slice(6, 11));
 
-test();
+console.log(logg.substring(6, 11));
 
-function doNothing() {};
-console.log(doNothing() === undefined); 
+console.log(logg.substr(6, 5));
+
+const num = 12.2;
+console.log(Math.round(num));
+
+const test = '12.2px';
+console.log(parseInt(test));
+console.log(parseFloat(test));
