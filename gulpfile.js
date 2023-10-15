@@ -1,6 +1,4 @@
-const {
-  src, dest, watch, parallel, series,
-} = require('gulp');
+const { src, dest, watch, parallel, series } = require('gulp');
 
 const scss = require('gulp-sass')(require('sass'));
 const concat = require('gulp-concat');
@@ -10,72 +8,72 @@ const autoprefixer = require('gulp-autoprefixer');
 const clean = require('gulp-clean');
 
 function scripts() {
-  return src([
-    'app/js/*.js',
-    '!app/js/main.min.js',
-  ])
-    .pipe(concat('main.min.js'))
-    .pipe(uglify())
-    .pipe(dest('app/js'))
-    .pipe(browserSync.stream());
+   return src([
+      'app/js/*.js',
+      '!app/js/main.min.js'
+   ])
+      .pipe(concat('main.min.js'))
+      .pipe(uglify())
+      .pipe(dest('app/js'))
+      .pipe(browserSync.stream())
 }
 
 function styles() {
-  return src('app/scss/style.scss')
-    .pipe(scss({ outputStyle: 'compressed' }))
-    .pipe(concat('style.min.css'))
-    .pipe(autoprefixer({
-      overrideBrowserslist: ['last 10 version'],
-    }))
-    .pipe(dest('app/css'))
-    .pipe(browserSync.stream());
+   return src('app/scss/style.scss')
+      .pipe(scss({ outputStyle: 'compressed' }))
+      .pipe(concat('style.min.css'))
+      .pipe(autoprefixer({
+         overrideBrowserslist: ['last 10 version'],
+      }))
+      .pipe(dest('app/css'))
+      .pipe(browserSync.stream())
 }
 
 function watching() {
-  watch(['app/scss/**/*.scss'], styles);
-  watch(['app/js/**/*.js', '!app/js/main.min.js'], scripts);
-  watch(['app/*.html']).on('change', browserSync.reload);
+   watch(['app/scss/**/*.scss'], styles);
+   watch(['app/js/**/*.js', '!app/js/main.min.js'], scripts);
+   watch(['app/*.html']).on('change', browserSync.reload);
 }
 
 function browsersync() {
-  browserSync.init({
-    server: {
-      baseDir: 'app/',
-    },
-  });
+   browserSync.init({
+      server: {
+         baseDir: 'app/'
+      }
+   });
 }
 
 function cleanDist() {
-  return src('dist')
-    .pipe(clean());
+   return src('dist')
+      .pipe(clean())
 }
 
 function images() {
-  return src('app/images/**/*')
-    .pipe(imagemin(
-      [
-        imagemin.gifsicle({ interlaced: true }),
-        imagemin.mozjpeg({ quality: 75, progressive: true }),
-        imagemin.optipng({ optimizationLevel: 5 }),
-        imagemin.svgo({
-          plugins: [
-            { removeViewBox: true },
-            { cleanupIDs: false },
-          ],
-        }),
-      ],
-    ))
-    .pipe(dest('dist/images'));
+   return src('app/images/**/*')
+      .pipe(imagemin(
+         [
+            imagemin.gifsicle({ interlaced: true }),
+            imagemin.mozjpeg({ quality: 75, progressive: true }),
+            imagemin.optipng({ optimizationLevel: 5 }),
+            imagemin.svgo({
+               plugins: [
+                  { removeViewBox: true },
+                  { cleanupIDs: false }
+               ]
+            })
+         ]
+      ))
+      .pipe(dest('dist/images'))
 }
 
 function building() {
-  return src([
-    'app/css/style.min.css',
-    'app/js/main.min.js',
-    'app/**/*.html',
-    'app/fonts/**/*',
-  ], { base: 'app' })
-    .pipe(dest('dist'));
+   return src([
+      'app/css/style.min.css',
+      'app/js/main.min.js',
+      'app/**/*.html',
+      'app/fonts/**/*'
+   ], { base: 'app' })
+      .pipe(dest('dist'))
 }
 
 exports.styles = styles;
