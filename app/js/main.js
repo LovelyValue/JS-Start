@@ -1,24 +1,42 @@
-function first() {
-	//Do something
-	setTimeout(function() {
-		console.log(1);
-	}, 500);
-}
+const options = {
+	name: 'test',
+	width: 1024,
+	height: 1024,
+	colors: {
+		border: 'black',
+		bg: 'red'
+	},
+	makeTest: function() {
+		console.log('Test');
+	}
+};
 
-function second() {
-	console.log(2);
-}
+options.makeTest();
 
-first();
-second();
+const {border, bg} = options.colors;
 
-function learnJS(lang, callback) {
-	console.log(`Я учу: ${lang}`);
-	callback();
-}
+console.log(border);
 
-function done() {
-	console.log('Я прошел этот урок!');
-}
+// console.log(Object.keys(options).length);
 
-learnJS('JavaScript', done);
+// console.log(options.name);
+
+// delete options.name;
+
+// console.log(options);
+
+// let counter = 0;
+// for (let key in options) {
+// 	if (typeof(options[key]) === 'object') {
+// 		for (let i in options[key]) {
+// 			console.log(`Свойства ${i}, имеет значение ${options[key] [i]}`);
+// 			counter++;
+// 		}
+// 	} else {
+// 		console.log(`Свойства ${key}, имеет значение ${options[key]}`);
+// 		counter++;
+// 	}
+// }
+
+// console.log(counter);
+
