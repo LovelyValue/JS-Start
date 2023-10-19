@@ -21,7 +21,7 @@ console.log(border);
 
 // console.log(options.name);
 
-// delete options.name;
+delete options.name;
 
 // console.log(options);
 
