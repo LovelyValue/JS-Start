@@ -1,30 +1,59 @@
-// let str = 'some';
-// let strObj = new String(str);
 
-// console.log(typeof(str));
-// console.log(typeof(strObj));
+// To String
 
-// console.dir([1, 2, 3]);
+// 1)
 
-const soldier = {
-	health:400,
-	armor: 100,
-	sayHello: function() {
-		console.log('Hello')
-	}
-};
+console.log(typeof(String(null)));
+console.log(typeof(String(4)));
 
-const jonh = Object.create(soldier);
+// 2)
 
-// const jonh = {
-// 	health: 100
-// };
+console.log(typeof(null + ''));
 
-// jonh.__proto__ = soldier;
+const num = 5;
 
-Object.setPrototypeOf(jonh, soldier);
+console.log('https:vk.com/catalog/' + num);
 
-// console.log(jonh.armor);
+const fontSize = 26 + 'px';
 
-jonh.sayHello();
+//To Number
 
+// 1)
+
+console.log(typeof(Number('4')));
+
+// 2)
+
+console.log(typeof(Number(+'5')));
+
+// 3)
+
+console.log(typeof(parseInt('15px', 10)));
+
+let answ = +prompt('Hello', '');
+
+// To Boolean
+
+// 1)
+
+// 0, '', null, undefined, NaN; - all false
+
+let switcher = null;
+
+if (switcher) {
+	console.log('Working...')
+}
+
+switcher = 1;
+
+if (switcher) {
+	console.log('Working...')
+}
+
+// 2)
+
+console.log(typeof(Boolean('4')));
+
+// 3)
+
+console.log(typeof(!!'44444'));
