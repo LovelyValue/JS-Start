@@ -1,59 +1,45 @@
+// let number = 3; debugger
 
-// To String
+// function logNumber() {
+//    let number = 4; debugger
+//    console.log(number);
+// }
 
-// 1)
+// number = 6;
 
-console.log(typeof(String(null)));
-console.log(typeof(String(4)));
 
-// 2)
+// number = 8;
 
-console.log(typeof(null + ''));
+// logNumber(); debugger
 
-const num = 5;
+function createCounter() {
+   let counter = 0;
 
-console.log('https:vk.com/catalog/' + num);
+   const myFunction = function() {
+      counter = counter + 1;
+      return counter;
+   }
 
-const fontSize = 26 + 'px';
-
-//To Number
-
-// 1)
-
-console.log(typeof(Number('4')));
-
-// 2)
-
-console.log(typeof(Number(+'5')));
-
-// 3)
-
-console.log(typeof(parseInt('15px', 10)));
-
-let answ = +prompt('Hello', '');
-
-// To Boolean
-
-// 1)
-
-// 0, '', null, undefined, NaN; - all false
-
-let switcher = null;
-
-if (switcher) {
-	console.log('Working...')
+   return myFunction;
 }
 
-switcher = 1;
+const increment = createCounter();
+const c1 = increment();
+const c2 = increment();
+const c3 = increment();
 
-if (switcher) {
-	console.log('Working...')
+console.log(c1, c2, c3);
+
+{
+   let msg = 'Hello';
 }
 
-// 2)
+console.log(msg);
 
-console.log(typeof(Boolean('4')));
+for (let i = 0; i < 9; i++) {
+   for (let j = 0; j < 9; j++) {
+      let num = 3;
+   }
 
-// 3)
-
-console.log(typeof(!!'44444'));
+   console.log(num);
+}
