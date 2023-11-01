@@ -1,45 +1,23 @@
-// let number = 3; debugger
+const box = document.getElementById('box');
 
-// function logNumber() {
-//    let number = 4; debugger
-//    console.log(number);
-// }
+console.log(box);
 
-// number = 6;
+const btns = document.getElementsByTagName('button');
 
+console.log(btns[0]);
 
-// number = 8;
+const circles = document.getElementsByClassName('circle');
 
-// logNumber(); debugger
+console.log(circles);
 
-function createCounter() {
-   let counter = 0;
+const hearts = document.querySelectorAll('.heart');
 
-   const myFunction = function() {
-      counter = counter + 1;
-      return counter;
-   }
+console.log(hearts);
 
-   return myFunction;
-}
+hearts.forEach(item => {
+   console.log(item);
+});
 
-const increment = createCounter();
-const c1 = increment();
-const c2 = increment();
-const c3 = increment();
+const oneHeart = document.querySelector('.heart');
 
-console.log(c1, c2, c3);
-
-{
-   let msg = 'Hello';
-}
-
-console.log(msg);
-
-for (let i = 0; i < 9; i++) {
-   for (let j = 0; j < 9; j++) {
-      let num = 3;
-   }
-
-   console.log(num);
-}
+console.log(oneHeart);
