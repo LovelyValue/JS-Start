@@ -1,65 +1,43 @@
-const personalMovieDB = {
-	count: 0,
-	movies: {},
-	actors: {},
-	genres: [],
-	privat: false,
-	start: function() {
-		personalMovieDB.count = +prompt('Сколько фильмов вы уже посмотрели?', '');
+const btns = document.querySelectorAll("button");
+const overlay = document.querySelector('.overlay');
+// btn.onclick = function() {
+// 	alert('Click');
+// };
 
-		while (personalMovieDB.count == '' || personalMovieDB.count == null || isNaN(personalMovieDB.count)) {
-			personalMovieDB.count = +prompt('Сколько фильмов вы уже посмотрели?', '');
-		}
-	},
-	rememberMyFilms: function() {
-		for (let i = 0; i < 2; i++) {
-			const a = prompt('Один из последних просмотренных фильмов?', '');
-			const b = prompt('На сколько оцените его', '');
-			if (a != null && b != null && a != '' && b != '' && a.length < 50) {
-				personalMovieDB.movies[a] = b;
-				console.log('done');
-			} else {
-				console.log('error');
-				i--;
-			}
-		}
-	},
-	detectPersonalLevel: function() {
-		if (personalMovieDB.count < 10) {
-			console.log('Просмотрено довольно мало фильмов');
-		} else if (personalMovieDB.count >= 10 && personalMovieDB < 30) {
-			console.log('Вы классический зритель');
-		} else if (personalMovieDB.count > 30) {
-			console.log('Вы киноман');
-		} else {
-			console.log('Произошла ошибка');
-		}
-	},
-	showMyDB: function(hidden) {
-		if (!hidden) {
-			console.log(personalMovieDB);
-		}
-	},
-	toggleVisibleMyDB: function() {
-		if(personalMovieDB.privat ) {
-			personalMovieDB.privat = true;
-		} else {
-			personalMovieDB.privat = false;
-		}
-	},
-	writeYourGenres: function() {
-		for (let i = 1; i <= 3; i++) {
-			let genre = prompt(`Ваш любимый жанр под номеро ${i}`);
+// btn.addEventListener('click', () => {
+// 	alert('Click');
+// });
 
-			if(genre === '' || genre == null) {
-				console.log('Вы ввели некорректные данные или не ввели их вовсе');
-				i--;
-			} else {
-				personalMovieDB.genres[i - 1] = genre;
-			}
-		}
-		personalMovieDB.genres.forEach((item, i) => {
-			console.log(`Любимый жанр ${i + 1} - это ${item}`);
-	  });
-	}
+// btn.addEventListener('mouseenter', () => {
+// 	alert('Hover');
+// });
+
+// btn.addEventListener('mouseenter', (e) => {
+// 	//  console.log(e.target);
+// 	 e.target.remove();
+// });
+
+// let i = 0;
+const deleteElement = (e) => {
+	console.log(e.target);
+	console.log(e.type);
+	// i++;
+	// if (i == 1) {
+	// 	btn.removeEventListener('click', deleteElement);
+	// }
 };
+
+// btn.addEventListener('click', deleteElement);
+// btn.addEventListener('overlay', deleteElement);
+
+btns.forEach(btn => {
+	btn.addEventListener('click', deleteElement, {once: true});
+});
+
+const link = document.querySelector('a');
+
+link.addEventListener('click', function(event) {
+	event.preventDefault();
+
+	console.log(event.traget);
+});  
