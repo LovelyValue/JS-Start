@@ -1,52 +1,122 @@
-const box = document.getElementById('box');
-const btns = document.getElementsByTagName('button');
-const circles = document.getElementsByClassName('circle');
-const hearts = document.querySelectorAll('.heart');
-const oneHeart = document.querySelector('.heart');
-const wrapper = document.querySelector('.wrapper');
+// function pow(x, n) {
+//    let result = 1;
 
-// box.style.backgroundColor = 'blue';
-// box.style.width = '500px';
-box.style.cssText = 'background-color: blue; width: 500px';
-btns[1].style.borderRadius = '100%';
-circles[1].style.backgroundColor = 'red';
-
-
-// for(let i = 0; i < hearts.length; i++) {
-//    hearts[i].style.backgroundColor = 'blue';
+//    for (let i = 0; i < n; i++) {
+//       result *= x;
+//    }
+//    return result
 // }
 
-hearts.forEach(item => {
-   item.style.backgroundColor = 'blue';
-})
+// console.log(pow(2, 1));
+// console.log(pow(2, 2));
+// console.log(pow(2, 3));
+// console.log(pow(2, 4));
 
-const div = document.createElement('div');
-// const text = document.createTextNode('I were here');
+// function pow(x, n) {
+//     if (n === 1) {
+//       return x;
+//     } else {
+//       return x * pow(x, n - 1);
+//     }
+// }
 
-div.classList.add('black');
+// console.log(pow(2, 1));
+// console.log(pow(2, 2));
+// console.log(pow(2, 3));
+// console.log(pow(2, 4));
+// console.log(pow(2, 5));
+// console.log(pow(2, 6));
+// console.log(pow(2, 7));
+// console.log(pow(2, 8));
 
-// document.body.append(div);
+let students = {
+   js: [
+      {
+         name: 'John',
+         progress: 100
+      }, {
+         name: 'Ivan',
+         progress: 60
+      }
+   ],
 
-// wrapper.append(div);
-// wrapper.appendChild(div);
+   html: {
+      basic: [
+         {
+            name: 'Peter',
+            progress: 20
+         }, {
+            name: 'Ann',
+            progress: 18
+         }
+      ],
 
-// wrapper.prepend(div);
+      pro: [
+         {
+            name: 'Sam',
+            progress: 10
+         }
+      ],
+      semi: {
+         students: [
+            {
+               name: 'Nick',
+               progress: 100
+            }
+         ]
+      }
+   }
+};
 
-hearts[0].before(div);
-// hearts[0].after(div);
+function getTotalProgressByIteration(data) {
+   let total = 0;
+   let students = 0;
 
-// wrapper.insertBefore(div, hearts[1]);
+   for (let course of Object.values(data)) {
+      if (Array.isArray(course)) {
+         students += course.length;
 
-// circles[0].remove();
+         for( let i = 0; i < course.length; i++) {
+            total += course[i].progress;
+         } 
+      } else {
+         for (let subCourse of Object.values(course)) {
+            students += subCourse.length;
 
-// wrapper.removeChild(hearts[1]);
+            for( let i = 0; i < subCourse.length; i++) {
+               total += subCourse[i].progress
+            } 
+         }
+      }
+   }
 
-// hearts[0].replaceWith(circles[1]);
+   return total / students
+}
 
-// wrapper.replaceChild(circles[0], hearts[0]);
+// console.log(getTotalProgressByIteration(students));
 
-div.innerHTML = '<h1>Hello World</h1>';
+function getTotalProgressByRecursion(data) {
+   if (Array.isArray(data)) {
+      let total = 0;
+      
+      for (let i = 0; i < data.length; i++) {
+         total += data[i].progress;
+      }
 
-// div.textContent = 'Hello';
+      return [total, data.length];
+   } else {
+      let total = [0, 0];
 
-div.insertAdjacentHTML('afterend', '<h2>Hello</h2>');
+      for (let subData of Object.values(data)) {
+         const subDataArr = getTotalProgressByRecursion(subData);
+         total[0] += subDataArr[0];
+         total[1] += subDataArr[1];
+      }
+
+      return total;
+   }
+}
+
+const result = getTotalProgressByRecursion(students);
+
+console.log(result[0]/result[1]); 
